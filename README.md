@@ -72,7 +72,10 @@ Part 4: Creating an EKS cluster and deploying the app using Python
 
   Step 3: Create deployment and service there is a file called eks.py make sure to edit the name of the image with your image Uri.
 
-Once you run this file by running “python3 eks.py” deployment and service will be created. 
+Once you run this file by running the command 
+
+    python3 eks.py 
+deployment and service will be created. 
 Check by running following commands: 
     kubectl get deployment -n default (check deployments) 
     kubectl get service -n default (check service) 
