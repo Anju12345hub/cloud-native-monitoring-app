@@ -1,6 +1,7 @@
 # cloud-native-monitoring-app
 
 
+<<<<<<< HEAD
 Things you will Learn
  1)Python and How to create Monitoring Application in Python using Flask and psutil 
  2)How to run a Python App locally. 
@@ -79,3 +80,6 @@ Check by running following commands:
 Once your pod is up and running, run the port-forward to expose the service
 
 kubectl port-forward service/<service_name> 5000:5000
+=======
+
+>>>>>>> 69fdc2e113c0ed329b487b0f0d83509a3d133ae1
