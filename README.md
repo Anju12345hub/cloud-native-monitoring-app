@@ -19,7 +19,8 @@ Prerequisites !
  - Programmatic access and AWS configured with CLI. 
  - Python3 Installed. 
  - Docker and Kubectl installed. 
- - eksctl installed Code editor (Vscode)
+ - eksctl installed
+ - Code editor (Vscode)
 
 Let’s Start the Project ✨
  Part 1: Deploying the Flask application locally 
