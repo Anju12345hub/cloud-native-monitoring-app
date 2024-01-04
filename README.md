@@ -40,38 +40,15 @@ This will start the Flask server on localhost:5000. Navigate to http://localhost
 
 Part 2: Dockerizing the Flask application
 Step 1: Create a Dockerfile
-Create a Dockerfile in the root directory of the project with the following contents:
-
-# Use the official Python image as the base image
-FROM python:3.9-slim-buster
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the requirements file to the working directory
-COPY requirements.txt .
-
-RUN pip3 install --no-cache-dir -r requirements.txt
-
-# Copy the application code to the working directory
-COPY . .
-
-# Set the environment variables for the Flask app
-ENV FLASK_RUN_HOST=0.0.0.0
-
-# Expose the port on which the Flask app will run
-EXPOSE 5000
-
-# Start the Flask app when the container is run
-CMD ["flask", "run"]
+Create a Dockerfile in the root directory of the project
 Step 2: Build the Docker image
 To build the Docker image, execute the following command:
 
-docker build -t <image_name> .
+    docker build -t <image_name> .
 Step 3: Run the Docker container
 To run the Docker container, execute the following command:
 
-docker run -p 5000:5000 <image_name>
+    docker run -p 5000:5000 <image_name>
 This will start the Flask server in a Docker container on localhost:5000. Navigate to http://localhost:5000/ on your browser to access the application.
 
 Part 3: Pushing the Docker image to ECR
@@ -79,7 +56,7 @@ Step 1: Create an ECR repository
 Create an ECR repository using Python:
 there is a file called ecr.py,run the following command to create an ecr repo
 
-python3 ecr.py
+    python3 ecr.py
 
 Step 2: Push the Docker image to ECR
 Push the Docker image to ECR using the push commands on the console
@@ -95,9 +72,8 @@ Create a node group in the EKS cluster.
 
   Create the cluster and nodegroup by using eksctl
   run the following command 
-    $eksctl create cluster --name <your_clustername> --region <region> --node-type t2.micro --nodes-min2 --nodes-max 3
+           eksctl create cluster --name <your_clustername> --region <region> --node-type t2.micro --nodes-min2 --nodes-max 3
   
-
 Step 3: Create deployment and service
 there is a file called eks.py
 make sure to edit the name of the image with your image Uri.
